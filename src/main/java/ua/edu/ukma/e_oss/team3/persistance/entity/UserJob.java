@@ -18,29 +18,27 @@ import java.sql.Date;
 @AllArgsConstructor
 @Component
 @ToString()
+@Embeddable
 @Entity
 @Table(name = "UserJob")
 public class UserJob {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "userID")
-    private int userID;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "jobID")
-    private int jobID;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "startDate")
-    private Timestamp startDate;
+    @Embedded
+    private UserJobIdentity userJobIdentity;
 
     @Column(name = "endDate")
     private Timestamp endDate;
 
     @Column(name = "feedback", columnDefinition = "TEXT")
     private String feedback;
+
+    @ManyToOne
+    @JoinColumn(name="userID", nullable = false)
+    private User user;
+
+    @ManyToOne
+    @JoinColumn(name="jobID", nullable = false)
+    private Job job;
+
 
 }

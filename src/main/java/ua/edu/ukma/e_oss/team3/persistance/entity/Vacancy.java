@@ -37,5 +37,8 @@ public class Vacancy {
     @Column(name = "comment", columnDefinition = "TEXT")
     private String comment;
 
+    @ManyToOne
+    @JoinColumn(name="jobID", nullable = false)
+    private Job job;
 
 }
