@@ -1,66 +1,41 @@
 package ua.edu.ukma.e_oss.team3.persistance.entity;
-
+import lombok.*;
+import org.hibernate.annotations.Type;
 import org.springframework.stereotype.Component;
 
+import javax.persistence.*;
 import java.sql.Date;
+import java.sql.Timestamp;
 
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Component
+@ToString()
+@Entity
+@Table(name = "Vacancy")
 public class Vacancy {
-    private int vacancy_id;
-    private int job_id;
-    private boolean active;
-    private Date deadline;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "vacancyID")
+    private Integer vacancyID;
+
+    @ManyToOne
+    @JoinColumn(name="vacancyID", nullable = false)
+    private Job job;
+
+    @Column(name = "active", columnDefinition = "SMALLINT(1)")
+    @Type(type = "org.hibernate.type.NumericBooleanType")
+    private Boolean active;
+
+    @Column(name = "deadline")
+    private Timestamp deadline;
+
+    @Column(name = "comment", columnDefinition = "TEXT")
     private String comment;
 
-    public Vacancy(){}
-    public int getVacancy_id() {
-        return vacancy_id;
-    }
 
-    public void setVacancy_id(int vacancy_id) {
-        this.vacancy_id = vacancy_id;
-    }
-
-    public int getJob_id() {
-        return job_id;
-    }
-
-    public void setJob_id(int job_id) {
-        this.job_id = job_id;
-    }
-
-    public boolean isActive() {
-        return active;
-    }
-
-    public void setActive(boolean active) {
-        this.active = active;
-    }
-
-    public Date getDeadline() {
-        return deadline;
-    }
-
-    public void setDeadline(Date deadline) {
-        this.deadline = deadline;
-    }
-
-    public String getComment() {
-        return comment;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
-
-    @Override
-    public String toString() {
-        return "Vacancy{" +
-                "vacancy_id=" + vacancy_id +
-                ", job_id=" + job_id +
-                ", active=" + active +
-                ", deadline=" + deadline +
-                ", comment='" + comment + '\'' +
-                '}';
-    }
 }

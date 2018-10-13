@@ -1,48 +1,34 @@
 package ua.edu.ukma.e_oss.team3.persistance.entity;
-import org.springframework.stereotype.Component;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
+import javax.persistence.*;
+import java.util.List;
 
-@Component
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@Entity
+@Table(name = "Job")
 public class Job {
+    @Id
+    @GeneratedValue
+    @Column(name = "jobID")
     private int job_id;
+
+    @Column(name = "soID")
     private int so_id;
+
+    @Column(name = "title")
     private String title;
+
+    @Column(name = "description", columnDefinition = "TEXT")
     private String description;
-    public Job(){
-        //this.setSer
-    }
-    public int getJob_id(){
-        return job_id;
-    }
-    public int getSo_id(){
-        return so_id;
-    }
-    public void setJob_id(int job_id){
-        this.job_id = job_id;
-    }
-    public void setSo_id(int so_id){
-        this.so_id = so_id;
-    }
-    public String getTitle(){
-        return title;
-    }
-    public String getDescription(){
-        return description;
-    }
-    public void setTitle(String title){
-        this.title = title;
-    }
-    public void setDescription(String description) {
-        this.description = description;
 
-    }
+    @JsonIgnore
+    @OneToMany(mappedBy = "Job", cascade = CascadeType.ALL)
+    private List<Vacancy> vacancyList;
 
-    @Override
-    public String toString() {
-        return "Job{" +
-                "job_id=" + job_id +
-                ", so_id=" + so_id +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                '}';
-    }
+
 }
