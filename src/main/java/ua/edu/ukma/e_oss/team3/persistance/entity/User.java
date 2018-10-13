@@ -1,64 +1,39 @@
 package ua.edu.ukma.e_oss.team3.persistance.entity;
-import org.springframework.stereotype.Component;
 
-@Component
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
+
+import javax.persistence.*;
+import java.util.List;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString()
+@Entity
+@Table(name = "User")
 public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "userID")
     private int user_id;
+
+    @Column(name = "role")
     private String role;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "tel_num")
     private String tel_num;
 
-    public User(){}
-
-    public int getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getTel_num() {
-        return tel_num;
-    }
-
-    public void setTel_num(String tel_num) {
-        this.tel_num = tel_num;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "user_id=" + user_id +
-                ", role='" + role + '\'' +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", tel_num='" + tel_num + '\'' +
-                '}';
-    }
+    @JsonIgnore
+    @OneToMany(mappedBy = "User", cascade = CascadeType.ALL)
+    private List<SO_application> soApplicationList;
 }
