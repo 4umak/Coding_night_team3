@@ -1,4 +1,4 @@
-package ua.edu.ukma.e_oss.team3.entity;
+package ua.edu.ukma.e_oss.team3.persistance.entity;
 import org.springframework.stereotype.Component;
 
 @Component
