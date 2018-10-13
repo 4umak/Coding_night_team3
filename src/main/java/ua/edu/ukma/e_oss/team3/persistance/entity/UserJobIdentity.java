@@ -16,7 +16,7 @@ public class UserJobIdentity implements Serializable {
     @NotNull
     private Date startDate;
 
-    public UserJobIdentity{
+    public UserJobIdentity (){
 
     }
     public UserJobIdentity(int userID, int companyID, Date startDate){

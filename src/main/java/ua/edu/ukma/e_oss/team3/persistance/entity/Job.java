@@ -30,5 +30,12 @@ public class Job {
     @OneToMany(mappedBy = "Job", cascade = CascadeType.ALL)
     private List<Vacancy> vacancyList;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "Job", cascade = CascadeType.ALL)
+    private List<UserJob> userJobList;
+
+    @ManyToOne
+    @JoinColumn(name="soID", nullable = false)
+    private SO so;
 
 }
