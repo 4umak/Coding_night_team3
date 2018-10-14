@@ -38,4 +38,7 @@ public class Job {
     @JoinColumn(name="soID", nullable = false)
     private SO so;
 
+    public int getJob_id() {
+        return job_id;
+    }
 }
