@@ -23,10 +23,6 @@ public class Vacancy {
     @Column(name = "vacancyID")
     private Integer vacancyID;
 
-    @ManyToOne
-    @JoinColumn(name="vacancyID", nullable = false)
-    private Job job;
-
     @Column(name = "active", columnDefinition = "SMALLINT(1)")
     @Type(type = "org.hibernate.type.NumericBooleanType")
     private Boolean active;

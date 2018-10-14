@@ -38,4 +38,6 @@ public class Job {
     @JoinColumn(name="soID", nullable = false)
     private SO so;
 
+    
+
 }
