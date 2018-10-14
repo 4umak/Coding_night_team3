@@ -1,4 +1,5 @@
 package ua.edu.ukma.e_oss.team3.dao;
+import ua.edu.ukma.e_oss.team3.entity.User;
 import ua.edu.ukma.e_oss.team3.entity.UserJob;
 import java.util.List;
 public interface UserJobDao {
@@ -8,4 +9,5 @@ public interface UserJobDao {
     void remove(UserJob userJob);
     //List<JobUser> getUserJobBy();
     List<UserJob> getAll();
+    UserJob findUserByJobId(int id);
 }
