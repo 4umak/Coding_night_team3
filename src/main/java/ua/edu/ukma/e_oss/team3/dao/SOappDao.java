@@ -6,7 +6,7 @@ public interface SOappDao {
     SO_application get(int id);
     int insert(SO_application soApp);
     void update(SO_application soApp);
-    void remove(SO_application soApp);
+    //void remove(SO_application soApp);
     //List<SO_application> getSOappBy();
     List<SO_application> getAll();
 }

@@ -6,8 +6,8 @@ public interface UserJobDao {
     UserJob get(int user_id, int job_id, String st_date);
     int insert(UserJob userJob);
     void update(UserJob userJob);
-    void remove(UserJob userJob);
-    //List<JobUser> getUserJobBy();
+   //void remove(UserJob userJob);
+    List<UserJob> getUserJobByJob_Id(int id);
     List<UserJob> getAll();
     UserJob findUserByJobId(int id);
 }
