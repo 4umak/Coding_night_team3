@@ -42,8 +42,8 @@ public class UserJobDaoImpl implements UserJobDao {
     }
 
     @Override
-    public List<UserJob> getUserJobByJob_id() {
-        return jdbcTemplate.query(GET_BY_JOB,mapper);
+    public List<UserJob> getUserJobByJob_Id(int id) {
+        return jdbcTemplate.query(GET_BY_JOB,mapper,id);
     }
 
     @Override

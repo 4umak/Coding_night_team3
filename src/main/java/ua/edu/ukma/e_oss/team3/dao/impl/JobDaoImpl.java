@@ -44,7 +44,7 @@ public class JobDaoImpl implements JobDao {
     }
 
     @Override
-    public List<Job> getJobBySo_id() {
+    public List<Job> getJobsBySo_id(int id) {
         return jdbcTemplate.query(GET_BY_SO,mapper);
     }
 
