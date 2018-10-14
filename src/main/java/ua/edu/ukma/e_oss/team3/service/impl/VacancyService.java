@@ -3,12 +3,13 @@ package ua.edu.ukma.e_oss.team3.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
 import ua.edu.ukma.e_oss.team3.persistance.entity.Vacancy;
 import ua.edu.ukma.e_oss.team3.persistance.repository.VacancyRepository;
 import ua.edu.ukma.e_oss.team3.service.IVacancyService;
 
 import java.util.List;
-
+@Service
 public class VacancyService implements IVacancyService {
 
     @Autowired

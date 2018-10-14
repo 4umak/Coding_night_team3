@@ -2,12 +2,13 @@ package ua.edu.ukma.e_oss.team3.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.stereotype.Service;
 import ua.edu.ukma.e_oss.team3.persistance.entity.Job;
 import ua.edu.ukma.e_oss.team3.persistance.repository.JobRepository;
 import ua.edu.ukma.e_oss.team3.service.IJobService;
 
 import java.util.List;
-
+@Service
 public class JobService implements IJobService{
 
     @Autowired
