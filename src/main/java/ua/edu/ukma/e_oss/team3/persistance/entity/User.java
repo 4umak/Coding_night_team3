@@ -36,4 +36,8 @@ public class User {
     @JsonIgnore
     @OneToMany(mappedBy = "User", cascade = CascadeType.ALL)
     private List<SO_application> soApplicationList;
+
+    public String getName() {
+        return name;
+    }
 }

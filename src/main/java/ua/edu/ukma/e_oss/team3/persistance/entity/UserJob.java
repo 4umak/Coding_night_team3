@@ -40,5 +40,14 @@ public class UserJob {
     @JoinColumn(name="jobID", nullable = false)
     private Job job;
 
+    public UserJobIdentity getUserJobIdentity() {
+        return userJobIdentity;
+    }
 
+    public Timestamp getEndDate() {
+        return endDate;
+    }
+    public Timestamp getStartDate() {
+        return endDate;
+    }
 }

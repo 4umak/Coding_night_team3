@@ -9,5 +9,5 @@ public interface ISOService {
     SO create(SO so);
     void  delete(int id);
     SO update(SO soToUpdate);
-    List<UserJob> getHistory(int so_id);
+    List<String> getHistory(int so_id);
 }
