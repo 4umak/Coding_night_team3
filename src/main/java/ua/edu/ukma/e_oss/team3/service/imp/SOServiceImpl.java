@@ -62,13 +62,15 @@ public class SOServiceImpl implements SOService {
     @Override
     public List<User> getListOfMembersById(int id) {
         List<Job> listOfJobs = jobDao.getJobsBySo_id(id);
-        List<UserJob> listOfUserJob = new ArrayList<>();
-//        for (Job job : listOfJobs) {
-//            listOfUserJob.add(userJobDao.findUserByJobId(job.getJob_id()));
-//        }
+        List<List<UserJob>> listOfUserJob = new ArrayList<>();
+        for (Job job : listOfJobs) {
+            listOfUserJob.add(userJobDao.getUserJobByJob_Id(job.getJob_id()));
+        }
         List<User> listOfMembers = new ArrayList<>();
-        for (UserJob userJob : listOfUserJob) {
-            listOfMembers.add(userDao.get(userJob.getUser_id()));
+        for (List<UserJob> listUserJob : listOfUserJob) {
+            for (UserJob uj : listUserJob) {
+                listOfMembers.add(userDao.get(uj.getUser_id()));
+            }
         }
         return listOfMembers;
     }

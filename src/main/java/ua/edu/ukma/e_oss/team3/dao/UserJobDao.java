@@ -7,6 +7,6 @@ public interface UserJobDao {
     int insert(UserJob userJob);
     void update(UserJob userJob);
     void remove(UserJob userJob);
-    List<UserJob> getUserJobByJob_Id();
+    List<UserJob> getUserJobByJob_Id(int id);
     List<UserJob> getAll();
 }
