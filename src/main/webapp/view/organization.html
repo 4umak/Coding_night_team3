@@ -126,17 +126,53 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
                 </div>
 
 
             <div class="row">
                 <div class="col-sm-2 field-title">Члени організації:</div>
-                <div class="col-sm-4 members-name"> name <br> name <br> name <br> name <br> name <br> name <br> name </div>
-                <div class="col-sm-4 members-job-title"> job <br> job <br> job <br> job <br> job <br> job <br> job </div>
+                <div class="col-sm-4 members-name"> Франк <br> Тро <br> name <br> name <br> name <br> name <br> name </div>
+                <div class="col-sm-4 members-job-title"> IOS <br> Голова <br> job <br> job <br> job <br> job <br> job </div>
                 <div class="col-sm-2 edit-button">
-                    <div><button type="button" class="btn btn-primary">Edit</button></div>
+                    <div><button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#modalMembers">Edit</button></div>
+
+
+                    <div id="modalMembers" class="modal fade"  tabindex="-1" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header"><button class="close" type="button" data-dismiss="modal">×</button>
+                                    <h4 class="modal-title">Змінити список членів організації</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-3 members-name"> <textarea rows="1" cols="35" class="text-area" name="text">Франк</textarea>  </div>
+                                        <div class="col-sm-2 members-job-title"> <textarea rows="1" cols="25" class="text-area" name="text">IOS</textarea> </div>
+
+                                        <div class="col-sm-1">
+                                            <button type="button" class="btn btn-danger" >Del</button>
+                                        </div>
+                                    </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-3 members-name"> <textarea rows="1" cols="35" class="text-area" name="text">Тро</textarea>  </div>
+                                            <div class="col-sm-2 members-job-title"> <textarea rows="1" cols="25" class="text-area" name="text">Голова</textarea> </div>
+
+                                            <div class="col-sm-1">
+                                                <button type="button" class="btn btn-danger" >Del</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer"><button class="btn btn-success" type="button" data-dismiss="modal">Зберегти</button></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
                     <div><button type="button" class="btn btn-success add-member">+</button></div>
                 </div>
             </div>
