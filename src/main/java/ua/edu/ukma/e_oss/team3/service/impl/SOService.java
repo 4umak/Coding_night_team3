@@ -39,7 +39,7 @@ public class SOService implements ISOService {
     public void delete(int id) {
         SO s = soRepository.findById(id).orElse(null);
         if(s!=null){
-            soRepository.deleteSOBySo_id(id);
+            soRepository.deleteSOByso_id(id);
         }
     }
 
