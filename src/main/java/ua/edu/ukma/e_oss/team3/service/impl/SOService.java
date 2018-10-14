@@ -9,7 +9,6 @@ import ua.edu.ukma.e_oss.team3.persistance.entity.*;
 import javax.annotation.Resource;
 import java.util.*;
 
-@Service("facultyService")
 public class SOService implements ISOService {
     @Resource
     private SORepository soRepository;
