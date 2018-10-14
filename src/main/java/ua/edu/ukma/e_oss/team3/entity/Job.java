@@ -8,7 +8,6 @@ public class Job {
     private String title;
     private String description;
     public Job(){
-        //this.setSer
     }
     public int getJob_id(){
         return job_id;

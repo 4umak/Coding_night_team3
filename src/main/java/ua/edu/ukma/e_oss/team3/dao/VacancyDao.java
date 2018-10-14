@@ -6,7 +6,7 @@ public interface VacancyDao {
     Vacancy get(int id);
     int insert(Vacancy vac);
     void update(Vacancy vac);
-    void remove(Vacancy vac);
+    //void remove(Vacancy vac);
     //List<Vacancy> getVacancyBy();
     List<Vacancy> getAll();
 }

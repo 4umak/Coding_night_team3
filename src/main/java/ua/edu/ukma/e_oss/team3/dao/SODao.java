@@ -6,7 +6,7 @@ public interface SODao {
     SO get(int id);
     int insert(SO so);
     void update(SO so);
-    void remove(SO so);
+    //void remove(SO so);
     //List<SO> getSoBy();
     List<SO> getAll();
 }

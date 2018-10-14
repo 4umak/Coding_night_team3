@@ -6,7 +6,7 @@ public interface JobDao {
     Job get(int id);
     int insert(Job job);
     void update(Job job);
-    void remove(Job job);
-    //List<Job> getJobBy();
+    //void remove(Job job);
+    List<Job> getJobBySo_id();
     List<Job> getAll();
 }
